@@ -1,0 +1,106 @@
+---
+title: "Presenting outputs"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+```
+
+## Q1: What is the win rate by Tier and Sub sector ID. Split the above in to FY19 and FY20.
+
+```{r}
+
+#### Reading the data:
+
+library(readr)
+library(plyr)
+library(ggplot2)
+
+dat <- read_csv("Data.csv")
+
+
+
+################################################
+################## Q1: #########################
+################################################
+dat0 <- dat[dat$Stage == 'Closed Won',]
+
+
+q1 <- with(dat0, ftable(dat0$`Sub Sector ID`,dat0$`Account Tier`))
+q1 <- as.data.frame(q1)
+colnames(q1) <- c("SubSector","Tier","Freq")
+q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+
+q1[q1 == 0] <- NA
+
+
+plot0 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier)) +
+          geom_bar(position = position_stack(), stat = "identity", width = .7) +
+          geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+          coord_flip()
+
+
+plot0 <- plot0 + labs(title = "Win (%) by SubSector and Tier",
+                         y="Win(%)", x = "Sub sector ID")
+
+
+
+
+
+## Subsetting:
+dat1 <- dat[dat$Stage == 'Closed Won' & dat$FY == "FY19",]
+
+
+q1 <- with(dat1, ftable(dat1$`Sub Sector ID`,dat1$`Account Tier`))
+q1 <- as.data.frame(q1)
+colnames(q1) <- c("SubSector","Tier","Freq")
+q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+
+q1[q1 == 0] <- NA
+
+
+plot1 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier)) +
+          geom_bar(position = position_stack(), stat = "identity", width = .7) +
+          geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+          coord_flip()
+
+
+plot1 <- plot1 + labs(title = "Win (%) by SubSector and Tier (FY19)",
+                         y="Win(%)", x = "Sub sector ID")
+
+##########################################################################
+dat1 <- dat[dat$Stage == 'Closed Won' & dat$FY == "FY20",]
+
+
+q1 <- with(dat1, ftable(dat1$`Sub Sector ID`,dat1$`Account Tier`))
+q1 <- as.data.frame(q1)
+colnames(q1) <- c("SubSector","Tier","Freq")
+q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+
+q1[q1 == 0] <- NA
+
+
+plot2 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier)) +
+  geom_bar(position = position_stack(), stat = "identity", width = .7) +
+  geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+  coord_flip()
+
+
+plot2 <- plot2 + labs(title = "Win (%) by SubSector and Tier (FY20)",
+             y="Win(%)", x = "Sub sector ID")
+
+
+plot0
+
+library("ggpubr")
+figure <- ggarrange(plot1,plot2,ncol = 1, nrow = 2)
+figure
+
+```

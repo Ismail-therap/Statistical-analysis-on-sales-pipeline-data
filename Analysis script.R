@@ -35,6 +35,8 @@ plot1 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier))
 plot1 <- plot1 + labs(title = "Win (%) by SubSector and Tier (FY19)",
                          y="Win(%)", x = "Sub sector ID")
 
+plot1
+
 ##########################################################################
 dat1 <- dat[dat$Stage == 'Closed Won' & dat$FY == "FY20",]
 
