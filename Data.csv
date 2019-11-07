@@ -1,0 +1,359 @@
+Opportunity Owner ID,Sub Sector ID,Account Name ID,ABC Amount,Stage,Created Date,Sales Age,Campaign source,Total SAAS,Account Tier,Close Date,Day,Month,FY
+Person1,Service Type 1,Ac1,5400,Closed Lost,12/7/2018,11,Inbound,17820,2,5/1/2019,5,1,FY19
+Person2,Service Type 1,Ac2,900,Closed Lost,29/08/2019,12,Self gen,1035,3,8/1/2019,8,1,FY19
+Person3,Service Type 2,Ac3,0,Closed Lost,23/04/2019,9,Web,0,3,8/1/2019,8,1,FY19
+Person4,Service Type 1,Ac4,3000,Rejected by Sales,15/08/2019,,Web,10360,2,9/1/2019,9,1,FY19
+Person5,Service Type 2,Ac5,2000,Contacted,15/08/2019,,Self gen,2000,3,10/1/2019,10,1,FY19
+Person2,Service Type 3,Ac6,2500,Discovery,9/11/2019,43,Self gen,2500,2,11/1/2019,11,1,FY19
+Person6,Service Type 2,Ac7,7128,Closed Won,18/12/2018,32,Self gen,18533,2,19/01/2019,19,1,FY19
+Person6,Service Type 3,Ac8,1260,Closed Won,26/01/2019,2,Self gen,1260,3,28/01/2019,28,1,FY19
+Person3,Service Type 2,Ac9,3600,Rejected by Sales,13/09/2018,,Web,9000,2,28/01/2019,28,1,FY19
+Person6,Service Type 2,Ac10,0,Closed Won,28/01/2019,1,Self gen,0,3,29/01/2019,29,1,FY19
+Person7,Service Type 2,Ac11,310,Closed Lost,12/5/2018,43,Event,1562,3,31/01/2019,31,1,FY19
+Person8,Service Type 2,Ac12,3600,Closed Lost,14/09/2018,126,Cross Sell,4080,3,15/02/2019,15,2,FY19
+Person8,Service Type 2,Ac13,8550,Closed Won,19/06/2018,244,Self gen,8550,2,18/02/2019,18,2,FY19
+Person8,Service Type 2,Ac14,0,Closed Lost,20/07/2018,214,Acquired pipeline,0,2,19/02/2019,19,2,FY19
+Person6,Service Type 2,Ac15,1248,Closed Won,29/11/2018,85,Web,37903,2,26/02/2019,26,2,FY19
+Person8,Service Type 2,Ac16,19728,Closed Lost,8/9/2018,88,Self gen,19728,2,28/02/2019,28,2,FY19
+Person9,Service Type 1,Ac206,4620,Closed Won,3/6/2019,0,Webinar,5310,2,6/3/2019,6,3,FY19
+Person8,Service Type 2,Ac18,5520,Closed Won,28/01/2019,39,Web,5916,3,7/3/2019,7,3,FY19
+Person8,Service Type 5,Ac19,8640,Closed Lost,12/10/2018,81,Web,9936,2,7/3/2019,7,3,FY19
+Person8,Service Type 2,Ac20,25200,Closed Lost,20/07/2018,124,Self gen,25200,2,14/03/2019,14,3,FY19
+Person6,Service Type 2,Ac21,2376,Closed Won,3/5/2019,13,Webinar,2732,3,18/03/2019,18,3,FY19
+Person1,Service Type 1,Ac22,3485,Closed Won,3/6/2019,12,Webinar,3960,3,18/03/2019,18,3,FY19
+Person8,Service Type 2,Ac23,16470,Closed Won,22/02/2019,30,Self gen,18117,2,22/03/2019,22,3,FY19
+Person8,Service Type 2,Ac24,25200,Closed Lost,26/11/2018,59,Self gen,28980,1,22/03/2019,22,3,FY19
+Person6,Service Type 3,Ac25,2002,Closed Won,3/6/2019,16,Inbound,8928,2,22/03/2019,22,3,FY19
+Person8,Service Type 2,Ac26,3000,Closed Won,7/11/2018,260,Self gen,3000,3,27/03/2019,27,3,FY19
+Person10,Service Type 1,Ac27,2760,Closed Won,18/03/2019,10,Self gen,6948,3,28/03/2019,28,3,FY19
+Person3,Service Type 1,Ac28,0,Contacted,13/12/2018,,Event,0,3,29/03/2019,29,3,FY19
+Person8,Service Type 1,Ac29,3240,Closed Won,22/02/2019,35,Event,3726,2,29/03/2019,29,3,FY19
+Person6,Service Type 2,Ac30,3600,Closed Lost,25/10/2018,125,Event,9810,2,29/03/2019,29,3,FY19
+Person8,Service Type 5,Ac31,2160,Closed Won,25/03/2019,4,Web,2484,3,29/03/2019,29,3,FY19
+Person3,Service Type 2,Ac32,0,Contacted,27/11/2018,,Event,0,3,29/03/2019,29,3,FY19
+Person6,Service Type 2,Ac33,2700,Closed Lost,23/11/2018,78,Web,6210,2,4/4/2019,4,4,FY19
+Person11,Service Type 1,Ac34,12600,Closed Won,3/6/2019,30,Webinar,13500,2,5/4/2019,5,4,FY19
+Person12,Service Type 2,Ac35,3375,Closed Lost,4/8/2019,72,Web,3879,3,10/4/2019,10,4,FY19
+Person8,Service Type 1,Ac36,43200,Decision,15/11/2018,343,Self gen,63000,1,11/4/2019,11,4,FY19
+Person13,Service Type 1,Ac37,5638,Closed Won,4/12/2019,5,Self gen,6483,2,17/04/2019,17,4,FY19
+Person8,Service Type 2,Ac38,3000,Closed Lost,22/07/2018,234,Self gen,3000,3,18/04/2019,18,4,FY19
+Person7,Service Type 2,Ac39,1530,Closed Won,4/4/2019,19,Inbound,3600,3,23/04/2019,23,4,FY19
+Person9,Service Type 1,Ac41,1320,Closed Won,17/04/2019,7,Self gen,1518,1,24/04/2019,24,4,FY19
+Person9,Service Type 1,Ac41,1000,Closed Lost,4/11/2019,15,Self gen,1100,1,30/04/2019,30,4,FY19
+Person8,Service Type 1,Ac42,6480,Closed Lost,29/01/2019,70,Mailshot,6480,2,30/04/2019,30,4,FY19
+Person9,Service Type 5,Ac43,2160,Closed Won,5/3/2019,0,Self gen,2484,2,3/5/2019,3,5,FY19
+Person14,Service Type 1,Ac44,1200,Closed Won,5/2/2019,1,Self gen,1380,3,3/5/2019,3,5,FY19
+Person8,Service Type 1,Ac45,0,Closed Lost,19/12/2018,118,Self gen,0,1,6/5/2019,6,5,FY19
+Person8,Service Type 1,Ac46,2160,Closed Won,5/8/2019,0,Inbound,2484,3,8/5/2019,8,5,FY19
+Person8,Service Type 2,Ac47,2790,Closed Won,19/07/2018,295,Self gen,3209,3,10/5/2019,10,5,FY19
+Person15,Service Type 1,Ac48,15606,Closed Won,13/05/2019,0,Self gen,18360,1,13/05/2019,13,5,FY19
+Person8,Service Type 1,Ac49,1800,Closed Won,5/10/2019,3,Mailshot,2070,2,13/05/2019,13,5,FY19
+Person6,Service Type 2,Ac50,1588,Closed Won,1/3/2019,131,Web,4374,2,14/05/2019,14,5,FY19
+Person8,Service Type 1,Ac51,2,Closed Lost,7/2/2018,231,Self gen,2,3,15/05/2019,15,5,FY19
+Person13,Service Type 2,Ac52,3000,Closed Won,5/10/2019,6,Self gen,3038,3,16/05/2019,16,5,FY19
+Person13,Service Type 2,Ac53,4404,Closed Won,5/10/2019,6,Self gen,4459,2,16/05/2019,16,5,FY19
+Person8,Service Type 1,Ac54,4320,Closed Won,5/7/2019,9,Self gen,4968,2,16/05/2019,16,5,FY19
+Person13,Service Type 2,Ac55,3002,Closed Won,17/05/2019,0,Self gen,3453,2,17/05/2019,17,5,FY19
+Person8,Service Type 1,Ac56,2322,Closed Won,16/05/2019,4,Self gen,2670,3,20/05/2019,20,5,FY19
+Person16,Service Type 1,Ac57,1320,Closed Won,17/05/2019,17,Web,1518,3,22/05/2019,22,5,FY19
+Person8,Service Type 2,Ac58,7200,Closed Lost,22/07/2018,254,Acquired pipeline,7200,3,23/05/2019,23,5,FY19
+Person8,Service Type 2,Ac59,1716,Closed Lost,25/07/2018,219,Self gen,1716,3,24/05/2019,24,5,FY19
+Person8,Service Type 5,Ac60,12600,Closed Lost,22/07/2018,249,Self gen,12600,2,28/05/2019,28,5,FY19
+Person8,Service Type 2,Ac61,15600,Closed Won,5/3/2019,12,Mailshot,15600,2,29/05/2019,29,5,FY19
+Person8,Service Type 1,Ac62,1320,Closed Won,24/01/2019,187,Event,1518,3,30/05/2019,30,5,FY19
+Person8,Service Type 5,Ac63,48000,Closed Lost,10/5/2018,145,Self gen,55200,1,31/05/2019,31,5,FY19
+Person7,Service Type 2,Ac64,2700,Closed Lost,23/01/2019,29,Inbound,8920,3,6/6/2019,6,6,FY19
+Person8,Service Type 1,Ac65,1878,Closed Won,26/11/2018,192,Event,2160,3,6/6/2019,6,6,FY19
+Person17,Service Type 2,Ac66,0,Closed Won,3/12/2019,87,Nurture,504,3,7/6/2019,7,6,FY19
+Person3,Service Type 5,Ac67,0,Contacted,28/06/2019,,Event,0,3,12/6/2019,12,6,FY19
+Person8,Service Type 5,Ac68,58500,Closed Lost,29/06/2018,145,Self gen,58500,1,13/06/2019,13,6,FY19
+Person8,Service Type 2,Ac69,0,Closed Lost,20/11/2018,142,Self gen,0,1,18/06/2019,18,6,FY19
+Person8,Service Type 2,Ac70,9000,Closed Won,13/06/2019,6,Self gen,10350,2,19/06/2019,19,6,FY19
+Person8,Service Type 1,Ac71,6000,Closed Lost,9/11/2018,247,Cross Sell,6000,2,21/06/2019,21,6,FY19
+Person8,Service Type 2,Ac72,7320,Closed Lost,22/07/2018,276,Self gen,7320,2,21/06/2019,21,6,FY19
+Person18,Service Type 2,Ac73,1152,Closed Won,31/05/2019,28,Self gen,3974,3,21/06/2019,21,6,FY19
+Person14,Service Type 1,Ac74,1200,Closed Won,17/06/2019,4,Self gen,5808,3,21/06/2019,21,6,FY19
+Person16,Service Type 1,Ac75,1320,Closed Won,25/02/2019,121,Self gen,1518,3,26/06/2019,26,6,FY19
+Person8,Service Type 1,Ac76,2340,Closed Won,28/06/2019,3,Event,2691,3,28/06/2019,28,6,FY19
+Person8,Service Type 5,Ac77,4590,Closed Lost,22/07/2018,270,Self gen,4590,3,28/06/2019,28,6,FY19
+Person8,Service Type 2,Ac78,1000,Closed Lost,22/07/2018,222,Self gen,1000,3,28/06/2019,28,6,FY19
+Person8,Service Type 2,Ac79,73920,Closed Lost,22/07/2018,311,Acquired pipeline,85008,1,28/06/2019,28,6,FY19
+Person19,Service Type 1,Ac80,1320,Closed Won,20/06/2019,8,Web,7894,3,28/06/2019,28,6,FY19
+Person18,Service Type 2,Ac81,4248,Closed Won,31/05/2019,28,Self gen,14656,1,28/06/2019,28,6,FY19
+Person18,Service Type 1,Ac82,3457,Closed Won,31/05/2019,28,Self gen,11205,1,28/06/2019,28,6,FY19
+Person18,Service Type 2,Ac83,3096,Closed Won,30/05/2019,29,Self gen,10681,1,28/06/2019,28,6,FY19
+Person18,Service Type 2,Ac84,2160,Closed Won,31/05/2019,28,Self gen,7452,1,28/06/2019,28,6,FY19
+Person18,Service Type 2,Ac85,1152,Closed Won,30/05/2019,29,Self gen,3974,2,28/06/2019,28,6,FY19
+Person18,Service Type 2,Ac86,18149,Closed Won,17/06/2019,11,Self gen,43851,1,28/06/2019,28,6,FY19
+Person19,Service Type 1,Ac87,1320,Closed Lost,4/2/2019,56,Nurture,1320,3,30/06/2019,30,6,FY19
+Person13,Service Type 2,Ac88,2100,Closed Lost,5/9/2019,36,Web,5251,2,30/06/2019,30,6,FY19
+Person17,Service Type 2,Ac89,3150,Closed Lost,15/02/2019,111,Mailshot,3420,3,30/06/2019,30,6,FY19
+Person8,Service Type 2,Ac90,4860,Closed Won,8/3/2018,17,Self gen,4860,2,20/08/2018,20,8,FY19
+Person6,Service Type 2,Ac91,3807,Closed Won,28/08/2018,0,Self gen,3807,3,28/08/2018,28,8,FY19
+Person8,Service Type 2,Ac92,9720,Closed Won,19/06/2018,100,Acquired pipeline,9720,2,27/09/2018,27,9,FY19
+Person6,Service Type 2,Ac93,2520,Closed Won,10/9/2018,14,Bizible,5796,3,30/10/2018,30,10,FY19
+Person8,Service Type 2,Ac94,17712,Closed Won,22/07/2018,102,Acquired pipeline,17712,2,1/11/2018,1,11,FY19
+Person20,Service Type 2,Ac95,1140,Closed Won,29/10/2018,16,Self gen,1140,3,2/11/2018,2,11,FY19
+Person8,Service Type 2,Ac96,35640,Closed Won,26/11/2018,0,Acquired pipeline,40986,1,6/11/2018,6,11,FY19
+Person8,Service Type 1,Ac97,1800,Closed Won,11/2/2018,6,Self gen,2070,3,8/11/2018,8,11,FY19
+Person21,Service Type 5,Ac98,4200,Closed Won,26/06/2018,143,Web,11682,2,16/11/2018,16,11,FY19
+Person6,Service Type 2,Ac99,7032,Closed Won,18/10/2018,35,Event,16880,2,22/11/2018,22,11,FY19
+Person6,Service Type 2,Ac100,2484,Closed Won,26/11/2018,1,Self gen,2857,2,27/11/2018,27,11,FY19
+Person8,Service Type 1,Ac101,2700,Closed Lost,17/09/2018,76,Self gen,3105,2,30/11/2018,30,11,FY19
+Person6,Service Type 2,Ac102,1996,Closed Won,24/09/2018,87,Bizible,2295,3,13/12/2018,13,12,FY19
+Person22,Service Type 1,Ac103,2160,Closed Lost,23/11/2018,26,Event,2160,3,19/12/2018,19,12,FY19
+Person6,Service Type 2,Ac104,1830,Closed Won,13/12/2018,7,Self gen,2104,3,20/12/2018,20,12,FY19
+Person2,Service Type 3,Ac105,120000,Discovery,15/08/2019,69,Web,138000,1,5/1/2020,5,1,FY20
+Person6,Service Type 2,Ac106,12000,Discovery,23/09/2019,30,Web,25300,2,15/01/2020,15,1,FY20
+Person2,Service Type 2,Ac107,1080,Evaluation,7/10/2019,44,Self gen,1242,3,15/01/2020,15,1,FY20
+Person8,Service Type 1,Ac108,900,Discovery,22/10/2019,2,Event,1035,3,16/01/2020,16,1,FY20
+Person6,Service Type 3,Ac109,3600,Evaluation,9/10/2019,43,Self gen,16560,2,17/01/2020,17,1,FY20
+Person2,Service Type 2,Ac110,5000,Discovery,21/10/2019,3,Event,5750,2,20/01/2020,20,1,FY20
+Person7,Service Type 3,Ac112,3510,Closed Lost,4/8/2019,154,Self gen,12033,2,20/01/2020,20,1,FY20
+Person7,Service Type 3,Ac112,912,Closed Lost,4/8/2019,154,Self gen,12033,2,20/01/2020,20,1,FY20
+Person8,Service Type 2,Ac113,6930,Closed Lost,22/07/2018,191,Self gen,7970,2,23/01/2020,23,1,FY20
+Person8,Service Type 5,Ac114,0,Discovery,7/9/2019,107,Self gen,0,3,23/01/2020,23,1,FY20
+Person23,Service Type 1,Ac115,1800,Evaluation,21/08/2019,64,Self gen,1800,3,25/01/2020,25,1,FY20
+Person24,Service Type 1,Ac116,900,Decision,26/09/2019,28,Web,1035,3,30/01/2020,30,1,FY20
+Person24,Service Type 1,Ac117,900,Evaluation,30/08/2019,55,Self gen,1035,3,30/01/2020,30,1,FY20
+Person16,Service Type 1,Ac118,0,Closed Lost,12/10/2018,316,Event,0,3,31/01/2020,31,1,FY20
+Person15,Service Type 1,Ac119,33660,Evaluation,24/05/2019,153,Web,188365,1,31/01/2020,31,1,FY20
+Person3,Service Type 2,Ac120,0,Contacted,24/07/2019,,Self gen,0,2,14/02/2020,14,2,FY20
+Person25,Service Type 1,Ac121,900,Discovery,10/11/2019,13,Web,2553,3,17/02/2020,17,2,FY20
+Person6,Service Type 2,Ac122,3600,Evaluation,6/12/2019,98,Event,21960,2,17/02/2020,17,2,FY20
+Person8,Service Type 2,Ac123,4500,Discovery,21/03/2019,217,Self gen,4501,1,18/02/2020,18,2,FY20
+Person23,Service Type 1,Ac124,3600,Evaluation,8/2/2019,83,Self gen,3600,3,19/02/2020,19,2,FY20
+Person15,Service Type 2,Ac125,10000,Evaluation,4/11/2019,195,Self gen,99244,1,20/02/2020,20,2,FY20
+Person8,Service Type 2,Ac270,9,Discovery,12/3/2018,325,Self gen,10,1,20/02/2020,20,2,FY20
+Person26,Service Type 2,Ac127,900,Engaged,18/10/2019,,Self gen,13320,2,20/02/2020,20,2,FY20
+Person9,Service Type 5,Ac128,1650,Ready for Sales,10/3/2019,21,Web,1898,3,24/02/2020,24,2,FY20
+Person6,Service Type 2,Ac129,5000,Discovery,28/06/2019,118,Self gen,10000,2,24/02/2020,24,2,FY20
+Person8,Service Type 5,Ac130,10692,Discovery,10/5/2018,384,Self gen,12296,2,27/02/2020,27,2,FY20
+Person8,Service Type 3,Ac131,9,Discovery,12/12/2018,316,Self gen,9,1,28/02/2020,28,2,FY20
+Person8,Service Type 2,Ac132,28584,Discovery,23/09/2019,31,Inbound,32872,2,28/02/2020,28,2,FY20
+Person18,Service Type 2,Ac86,4680,Discovery,9/5/2019,49,Self gen,16146,1,28/02/2020,28,2,FY20
+Person24,Service Type 5,Ac134,900,Discovery,10/3/2019,17,Web,900,3,28/02/2020,28,2,FY20
+Person24,Service Type 1,Ac135,900,Discovery,10/8/2019,16,Web,900,3,29/02/2020,29,2,FY20
+Person24,Service Type 1,Ac136,900,Decision,10/8/2019,16,Web,900,3,29/02/2020,29,2,FY20
+Person22,Service Type 1,Ac137,30630,Discovery,7/10/2019,106,Self gen,34305,1,29/02/2020,29,2,FY20
+Person6,Service Type 2,Ac261,3600,Closed Lost,15/07/2019,67,Self gen,21960,2,6/3/2020,6,3,FY20
+Person6,Service Type 2,Ac139,1667,Closed Lost,30/05/2019,11,Web,2167,3,6/3/2020,6,3,FY20
+Person11,Service Type 1,Ac140,36960,Evaluation,30/01/2019,267,Event,42504,1,19/03/2020,19,3,FY20
+Person15,Service Type 5,Ac345,17866,Evaluation,17/10/2019,7,Self gen,210530,2,23/03/2020,23,3,FY20
+Person22,Service Type 8,Ac142,72000,Evaluation,13/03/2019,225,Self gen,90000,1,25/03/2020,25,3,FY20
+Person11,Service Type 9,Ac143,42804,Decision,12/4/2018,324,Event,49225,1,25/03/2020,25,3,FY20
+Person15,Service Type 2,Ac144,50000,Discovery,30/01/2019,266,iCare,157500,1,27/03/2020,27,3,FY20
+Person7,Service Type 2,Ac145,3600,Discovery,8/12/2019,28,Self gen,21960,2,27/03/2020,27,3,FY20
+Person15,Service Type 5,Ac146,20000,Discovery,3/11/2019,213,Web,92000,1,27/03/2020,27,3,FY20
+Person2,Service Type 5,Ac147,30000,Discovery,21/06/2019,125,Self gen,35000,2,27/03/2020,27,3,FY20
+Person27,Service Type 2,Ac148,30000,Contacted,28/03/2019,,Self gen,30000,1,27/03/2020,27,3,FY20
+Person28,Service Type 1,Ac149,900,Contacted,25/09/2019,,Web,1035,2,30/03/2020,30,3,FY20
+Person22,Service Type 1,Ac150,0,Discovery,29/11/2018,329,Event,0,1,31/03/2020,31,3,FY20
+Person8,Service Type 1,Ac151,118260,Decision,11/1/2018,357,Self gen,135999,1,31/03/2020,31,3,FY20
+Person3,Service Type 2,Ac152,0,Engaged,31/07/2019,,Self gen,0,3,31/03/2020,31,3,FY20
+Person15,Service Type 5,Ac153,47520,Evaluation,11/8/2018,350,Inbound,266370,1,13/04/2020,13,4,FY20
+Person8,Service Type 2,Ac154,29040,Discovery,20/07/2018,461,Acquired pipeline,33396,1,15/04/2020,15,4,FY20
+Person8,Service Type 2,Ac155,28200,Discovery,25/08/2018,426,Self gen,32430,1,16/04/2020,16,4,FY20
+Person29,Service Type 2,Ac156,10000,Discovery,25/04/2019,181,Self gen,38490,1,20/04/2020,20,4,FY20
+Person8,Service Type 2,Ac222,3,Discovery,29/03/2019,206,Web,4,2,22/04/2020,22,4,FY20
+Person19,Service Type 1,Ac158,20160,Discovery,14/10/2019,10,Self gen,28723,2,23/04/2020,23,4,FY20
+Person8,Service Type 5,Ac159,0,Discovery,3/6/2019,232,Self gen,0,3,23/04/2020,23,4,FY20
+Person8,Service Type 2,Ac160,1,Evaluation,22/07/2018,459,Acquired pipeline,2,1,24/04/2020,24,4,FY20
+Person6,Service Type 1,Ac161,10000,Discovery,30/08/2019,55,Inbound,21210,2,27/04/2020,27,4,FY20
+Person24,Service Type 2,Ac162,900,Evaluation,10/8/2019,16,Inbound,1035,3,27/04/2020,27,4,FY20
+Person13,Service Type 2,Ac163,5577,Decision,6/10/2019,11,Self gen,22859,2,30/04/2020,30,4,FY20
+Person21,Service Type 2,Ac164,10800,Discovery,2/12/2019,244,Web,35600,2,30/04/2020,30,4,FY20
+Person8,Service Type 1,Ac165,22680,Evaluation,3/4/2019,234,Mailshot,26082,1,30/04/2020,30,4,FY20
+Person8,Service Type 8,Ac166,132720,Discovery,17/09/2018,402,Web,152628,1,21/05/2020,21,5,FY20
+Person8,Service Type 5,Ac167,1,Discovery,20/07/2018,461,Acquired pipeline,2,3,21/05/2020,21,5,FY20
+Person8,Service Type 1,Ac168,25000,Discovery,5/10/2019,34,Self gen,28750,1,22/05/2020,22,5,FY20
+Person3,Service Type 2,Ac210,0,Contacted,24/07/2019,,Self gen,0,1,29/05/2020,29,5,FY20
+Person24,Service Type 1,Ac170,939,Evaluation,21/08/2019,64,Self gen,1080,3,29/05/2020,29,5,FY20
+Person3,Service Type 2,Ac171,0,Engaged,9/11/2019,,Web,0,3,29/05/2020,29,5,FY20
+Person26,Service Type 1,Ac295,1500,Engaged,24/10/2019,,Self gen,1500,3,19/06/2020,19,6,FY20
+Person27,Service Type 5,Ac173,67320,Contacted,6/5/2019,,Web,370667,1,30/06/2020,30,6,FY20
+Person22,Service Type 5,Ac174,5000,Discovery,7/3/2018,478,Self gen,5000,1,30/06/2020,30,6,FY20
+Person18,Service Type 2,Ac175,50000,Evaluation,9/11/2018,408,Self gen,50000,1,30/06/2020,30,6,FY20
+Person21,Service Type 1,Ac313,900,Discovery,9/10/2019,44,Web,3243,3,30/06/2020,30,6,FY20
+Person6,Service Type 2,Ac9,3600,Closed Lost,21/01/2019,19,Self gen,10350,2,6/7/2019,6,7,FY20
+Person26,Service Type 2,Ac289,3600,Engaged,24/10/2019,,Self gen,14400,2,10/7/2021,10,7,FY20
+Person8,Service Type 2,Ac179,2160,Closed Lost,15/08/2019,55,Web,2484,1,11/7/2019,11,7,FY20
+Person6,Service Type 3,Ac180,1837,Closed Won,22/03/2019,50,Web,4805,2,11/7/2019,11,7,FY20
+Person6,Service Type 2,Ac181,2700,Closed Lost,29/01/2019,11,Web,5810,3,18/07/2019,18,7,FY20
+Person30,Service Type 2,Ac182,18360,Closed Lost,10/10/2018,276,Self gen,21600,2,18/07/2019,18,7,FY20
+Person31,Service Type 5,Ac183,1518,Closed Lost,4/11/2019,67,Self gen,1518,3,19/07/2019,19,7,FY20
+Person6,Service Type 2,Ac184,3600,Closed Lost,27/11/2018,185,Event,4140,3,22/07/2019,22,7,FY20
+Person8,Service Type 1,Ac185,1800,Closed Won,7/10/2019,13,Mailshot,2070,3,23/07/2019,23,7,FY20
+Person8,Service Type 2,Ac186,1728,Closed Won,23/07/2019,0,Self gen,1987,3,23/07/2019,23,7,FY20
+Person8,Service Type 2,Ac187,2448,Closed Won,23/07/2019,0,Self gen,2815,3,23/07/2019,23,7,FY20
+Person8,Service Type 2,Ac188,1728,Closed Won,23/07/2019,0,Self gen,1987,3,23/07/2019,23,7,FY20
+Person8,Service Type 2,Ac190,1872,Closed Lost,22/07/2019,1,iCare,2153,3,23/07/2019,23,7,FY20
+Person8,Service Type 2,Ac190,1872,Closed Won,23/07/2019,0,Self gen,2153,3,23/07/2019,23,7,FY20
+Person6,Service Type 2,Ac303,3600,Closed Lost,1/4/2019,27,Inbound,10350,2,24/07/2019,24,7,FY20
+Person21,Service Type 1,Ac192,0,Closed Lost,30/07/2018,360,Self gen,0,2,25/07/2019,25,7,FY20
+Person12,Service Type 2,Ac193,165,Closed Lost,17/06/2019,3,Self gen,462,3,31/07/2019,31,7,FY20
+Person30,Service Type 9,Ac196,3150,Closed Lost,14/02/2019,149,Mailshot,4299,3,31/07/2019,31,7,FY20
+Person30,Service Type 9,Ac196,3150,Closed Lost,14/02/2019,149,Mailshot,5191,3,31/07/2019,31,7,FY20
+Person30,Service Type 9,Ac196,3150,Closed Lost,14/02/2019,149,Mailshot,5948,3,31/07/2019,31,7,FY20
+Person1,Service Type 1,Ac197,5000,Evaluation,12/3/2018,325,Self gen,5000,1,31/07/2020,31,7,FY20
+Person32,Service Type 2,Ac198,0,Engaged,27/06/2019,,Self gen,0,3,31/07/2020,31,7,FY20
+Person6,Service Type 2,Ac199,2219,Closed Won,25/07/2019,8,Mailshot,7339,2,2/8/2019,2,8,FY20
+Person6,Service Type 2,Ac326,2700,Closed Lost,2/1/2019,63,Inbound,8920,2,8/8/2019,8,8,FY20
+Person8,Service Type 1,Ac201,31680,Closed Won,18/04/2019,112,Inbound,34848,2,8/8/2019,8,8,FY20
+Person33,Service Type 1,Ac202,900,Closed Won,19/07/2019,24,Self gen,900,3,12/8/2019,12,8,FY20
+Person33,Service Type 1,Ac203,900,Closed Won,14/08/2019,0,Self gen,1035,3,14/08/2019,14,8,FY20
+Person2,Service Type 3,Ac204,900,Closed Won,31/07/2019,14,Web,1035,3,14/08/2019,14,8,FY20
+Person8,Service Type 2,Ac205,1000,Closed Lost,20/07/2018,347,Self gen,1000,1,15/08/2019,15,8,FY20
+Person9,Service Type 1,Ac206,0,Closed Won,19/08/2019,8,Self gen,18838,2,20/08/2019,20,8,FY20
+Person33,Service Type 1,Ac207,1350,Closed Won,19/08/2019,1,Self gen,1553,3,20/08/2019,20,8,FY20
+Person8,Service Type 5,Ac208,0,Closed Lost,12/12/2018,138,Self gen,0,2,20/08/2020,20,8,FY20
+Person8,Service Type 2,Ac209,1000,Closed Lost,20/07/2018,347,Self gen,1001,1,21/08/2019,21,8,FY20
+Person8,Service Type 2,Ac210,12990,Closed Lost,22/07/2018,366,Self gen,12990,1,21/08/2019,21,8,FY20
+Person8,Service Type 2,Ac211,46800,Closed Lost,17/05/2019,48,Web,51480,1,21/08/2019,21,8,FY20
+Person33,Service Type 1,Ac212,900,Closed Won,21/08/2019,0,Self gen,900,3,21/08/2019,21,8,FY20
+Person8,Service Type 1,Ac213,900,Closed Lost,31/01/2019,203,Mailshot,1035,3,22/08/2019,22,8,FY20
+Person8,Service Type 2,Ac214,5472,Closed Lost,17/04/2019,113,Mailshot,6293,3,22/08/2019,22,8,FY20
+Person6,Service Type 2,Ac215,2232,Closed Won,8/8/2019,15,Self gen,5773,3,23/08/2019,23,8,FY20
+Person8,Service Type 2,Ac216,1920,Closed Won,28/08/2019,0,Web,2208,3,28/08/2019,28,8,FY20
+Person26,Service Type 2,Ac218,7290,Engaged,15/10/2019,,Self gen,23490,3,28/08/2020,28,8,FY20
+Person12,Service Type 2,Ac218,3600,Closed Lost,24/04/2019,68,Web,4140,3,30/08/2019,30,8,FY20
+Person19,Service Type 1,Ac219,900,Closed Won,15/08/2019,28,Web,7290,2,30/08/2019,30,8,FY20
+Person14,Service Type 1,Ac220,1200,Closed Lost,25/06/2019,38,Inbound,3080,3,31/08/2019,31,8,FY20
+Person30,Service Type 5,Ac221,6660,Closed Lost,31/05/2019,43,Marketing campaigns,7659,2,31/08/2019,31,8,FY20
+Person8,Service Type 2,Ac222,0,Closed Lost,11/2/2018,133,Self gen,0,2,4/9/2019,4,9,FY20
+Person8,Service Type 2,Ac223,4500,Closed Lost,29/11/2018,92,Event,5175,3,5/9/2019,5,9,FY20
+Person24,Service Type 2,Ac224,2340,Closed Won,9/2/2019,8,Self gen,2340,3,10/9/2019,10,9,FY20
+Person6,Service Type 2,Ac225,1000,Closed Lost,7/2/2019,52,Web,6110,2,10/9/2019,10,9,FY20
+Person1,Service Type 1,Ac226,1737,Closed Won,9/8/2019,3,Self gen,2395,2,11/9/2019,11,9,FY20
+Person2,Service Type 2,Ac227,1200,Discovery,31/07/2019,85,Mailshot,1380,3,12/9/2019,12,9,FY20
+Person6,Service Type 2,Ac228,3600,Closed Lost,1/3/2019,216,Web,16560,2,12/9/2019,12,9,FY20
+Person34,Service Type 1,Ac229,10000,Closed Lost,3/5/2019,127,Self gen,40000,1,20/09/2019,20,9,FY20
+Person8,Service Type 1,Ac230,3600,Closed Lost,24/04/2019,147,Web,4140,2,20/09/2019,20,9,FY20
+Person32,Service Type 1,Ac231,2520,Closed Lost,26/06/2019,72,Self gen,2520,3,20/09/2019,20,9,FY20
+Person6,Service Type 2,Ac232,12000,Discovery,10/7/2019,17,Web,30970,2,21/09/2020,21,9,FY20
+Person33,Service Type 1,Ac233,900,Closed Lost,8/7/2019,27,Self gen,900,3,23/09/2019,23,9,FY20
+Person17,Service Type 2,Ac234,13398,Closed Lost,15/11/2018,203,Self gen,15408,2,24/09/2019,24,9,FY20
+Person1,Service Type 3,Ac235,8515,Closed Won,20/08/2019,36,Self gen,50458,2,25/09/2019,25,9,FY20
+Person27,Service Type 2,Ac79,0,Contacted,6/7/2019,,Self gen,0,3,25/09/2020,25,9,FY20
+Person15,Service Type 1,Ac237,33660,Discovery,7/3/2019,41,Event,133566,1,25/09/2020,25,9,FY20
+Person7,Service Type 2,Ac238,4680,Closed Lost,6/3/2019,107,Web,10657,2,27/09/2019,27,9,FY20
+Person28,Service Type 1,Ac239,3000,Rejected by Sales,7/11/2019,,Nurture,3450,3,27/09/2019,27,9,FY20
+Person18,Service Type 2,Ac240,2736,Closed Won,15/08/2019,43,Self gen,3146,3,27/09/2019,27,9,FY20
+Person14,Service Type 1,Ac241,1200,Closed Won,26/09/2019,7,Web,4020,3,27/09/2019,27,9,FY20
+Person19,Service Type 5,Ac242,900,Closed Lost,14/08/2019,28,Web,3180,3,30/09/2019,30,9,FY20
+Person33,Service Type 1,Ac243,1800,Closed Lost,19/07/2019,7,Self gen,1800,3,30/09/2019,30,9,FY20
+Person23,Service Type 1,Ac244,900,Closed Lost,17/09/2019,7,Web,1035,3,30/09/2019,30,9,FY20
+Person13,Service Type 2,Ac245,12500,Closed Lost,6/4/2019,49,Self gen,14375,3,30/09/2019,30,9,FY20
+Person33,Service Type 1,Ac246,900,Closed Lost,29/07/2019,38,Self gen,900,3,30/09/2019,30,9,FY20
+Person16,Service Type 1,Ac247,1320,Closed Lost,3/6/2019,160,Web,1518,2,30/09/2019,30,9,FY20
+Person23,Service Type 5,Ac248,900,Closed Lost,24/07/2019,34,Self gen,900,3,30/09/2019,30,9,FY20
+Person3,Service Type 2,Ac249,12000,Closed Lost,8/6/2019,45,Newsletter,19200,2,30/09/2019,30,9,FY20
+Person14,Service Type 1,Ac44,2640,Closed Lost,8/7/2019,55,Self gen,3036,3,30/09/2019,30,9,FY20
+Person16,Service Type 1,Ac251,1320,Closed Lost,20/03/2019,161,Self gen,1518,3,30/09/2019,30,9,FY20
+Person8,Service Type 2,Ac252,5985,Closed Won,24/04/2019,159,Web,6883,2,30/09/2019,30,9,FY20
+Person13,Service Type 2,Ac253,6817,Closed Won,7/2/2019,19,iCare,51580,2,30/09/2019,30,9,FY20
+Person8,Service Type 1,Ac254,4320,Closed Won,10/5/2018,361,Self gen,4752,2,1/10/2019,1,10,FY20
+Person6,Service Type 8,Ac255,7350,Evaluation,7/10/2019,94,Web,27302,2,2/10/2020,2,10,FY20
+Person6,Service Type 2,Ac256,2000,Closed Lost,25/06/2018,434,Self gen,12800,2,2/10/2020,2,10,FY20
+Person6,Service Type 2,Ac257,5000,Discovery,2/1/2019,265,Self gen,5000,2,2/10/2020,2,10,FY20
+Person2,Service Type 1,Ac258,4920,Closed Won,18/09/2019,15,Web,7232,2,3/10/2019,3,10,FY20
+Person28,Service Type 1,Ac259,12000,Engaged,18/06/2019,,Nurture,20453,2,6/10/2020,6,10,FY20
+Person28,Service Type 1,Ac260,3667,Engaged,20/05/2019,,Web,17278,2,6/10/2020,6,10,FY20
+Person8,Service Type 2,Ac261,7920,Closed Lost,20/07/2018,234,Acquired pipeline,7920,2,7/10/2019,7,10,FY20
+Person23,Service Type 1,Ac262,1080,Closed Won,10/3/2019,7,Web,2009,3,10/10/2019,10,10,FY20
+Person24,Service Type 1,Ac263,900,Closed Won,10/11/2019,3,Event,1035,3,14/10/2019,14,10,FY20
+Person6,Service Type 2,Ac264,540,Closed Lost,3/4/2019,81,Web,13770,2,15/10/2019,15,10,FY20
+Person12,Service Type 1,Ac265,0,Closed Lost,5/9/2019,55,Web,0,3,17/10/2019,17,10,FY20
+Person24,Service Type 2,Ac266,2925,Closed Won,13/09/2019,34,Self gen,3364,3,17/10/2019,17,10,FY20
+Person24,Service Type 1,Ac267,939,Closed Lost,13/09/2019,33,Self gen,1080,3,18/10/2019,18,10,FY20
+Person5,Service Type 2,Ac268,900,Closed Lost,19/09/2019,18,Self gen,900,3,18/10/2019,18,10,FY20
+Person24,Service Type 1,Ac269,900,Closed Lost,13/08/2019,64,Self gen,1035,3,18/10/2019,18,10,FY20
+Person6,Service Type 2,Ac270,12000,Discovery,29/08/2018,421,Web,33600,1,19/10/2020,19,10,FY20
+Person23,Service Type 1,Ac271,900,Closed Lost,15/08/2019,39,Self gen,1035,3,21/10/2019,21,10,FY20
+Person8,Service Type 3,Ac272,0,Closed Lost,23/07/2018,280,Self gen,0,2,21/10/2020,21,10,FY20
+Person1,Service Type 1,Ac273,1080,Closed Won,10/8/2019,13,Web,10647,2,22/10/2019,22,10,FY20
+Person8,Service Type 2,Ac90,11820,Closed Lost,20/08/2018,366,Self gen,11820,2,23/10/2019,23,10,FY20
+Person8,Service Type 2,Ac90,8910,Closed Lost,23/08/2018,363,Self gen,8910,2,23/10/2019,23,10,FY20
+Person8,Service Type 1,Ac276,3000,Closed Lost,20/08/2018,413,Self gen,3000,3,24/10/2019,24,10,FY20
+Person15,Service Type 2,Ac277,48000,Closed Won,8/5/2019,80,Self gen,55200,1,24/10/2019,24,10,FY20
+Person8,Service Type 1,Ac278,900,Closed Won,4/11/2019,196,Self gen,1035,3,24/10/2019,24,10,FY20
+Person23,Service Type 1,Ac279,900,Closed Lost,8/12/2019,52,Self gen,1035,3,25/10/2019,25,10,FY20
+Person6,Service Type 2,Ac280,2000,Closed Lost,2/12/2019,227,Self gen,12000,2,28/10/2019,28,10,FY20
+Person35,Service Type 1,Ac281,3000,Closed Lost,17/09/2019,21,Web,4730,2,28/10/2019,28,10,FY20
+Person8,Service Type 1,Ac282,32400,Closed Lost,27/11/2018,240,Event,37260,1,30/10/2019,30,10,FY20
+Person27,Service Type 8,Ac283,81000,Contacted,22/10/2019,,Event,300150,1,30/10/2020,30,10,FY20
+Person1,Service Type 1,Ac284,713,Decision,17/10/2019,7,Self gen,6427,2,31/10/2019,31,10,FY20
+Person24,Service Type 1,Ac285,900,Decision,10/3/2019,21,Web,1035,3,31/10/2019,31,10,FY20
+Person16,Service Type 1,Ac286,3600,Closed Lost,21/11/2018,279,Self gen,4140,3,31/10/2019,31,10,FY20
+Person16,Service Type 2,Ac287,1800,Closed Lost,8/5/2019,28,Web,2070,3,31/10/2019,31,10,FY20
+Person10,Service Type 1,Ac288,900,Discovery,10/7/2019,17,Mailshot,2290,3,31/10/2019,31,10,FY20
+Person6,Service Type 2,Ac289,2400,Closed Lost,10/12/2018,64,Self gen,8970,2,31/10/2019,31,10,FY20
+Person2,Service Type 1,Ac290,3300,Evaluation,9/4/2019,50,Web,3341,3,31/10/2019,31,10,FY20
+Person6,Service Type 2,Ac291,5000,Discovery,19/10/2018,370,Self gen,5000,2,31/10/2020,31,10,FY20
+Person15,Service Type 2,Ac292,36000,Ready for Sales,16/10/2019,8,Event,107640,1,31/10/2020,31,10,FY20
+Person25,Service Type 1,Ac293,900,Discovery,15/10/2019,9,Web,3108,3,3/11/2020,3,11,FY20
+Person8,Service Type 2,Ac298,14100,Closed Lost,9/11/2018,212,Event,14100,2,9/11/2019,9,11,FY20
+Person8,Service Type 1,Ac295,1980,Closed Lost,30/01/2019,85,Web,2277,3,9/11/2019,9,11,FY20
+Person24,Service Type 1,Ac296,900,Decision,8/12/2019,73,Self gen,1035,3,11/11/2019,11,11,FY20
+Person8,Service Type 2,Ac297,7200,Evaluation,15/10/2018,374,Inbound,8280,2,13/11/2019,13,11,FY20
+Person30,Service Type 2,Ac298,9750,Decision,10/3/2019,21,Web,11213,2,13/11/2019,13,11,FY20
+Person8,Service Type 5,Ac299,23328,Closed Lost,22/07/2018,366,Self gen,53654,1,15/11/2019,15,11,FY20
+Person8,Service Type 2,Ac300,2730,Closed Lost,27/03/2019,209,Event,2730,1,15/11/2019,15,11,FY20
+Person24,Service Type 1,Ac301,1800,Decision,27/08/2019,58,Self gen,2070,3,18/11/2019,18,11,FY20
+Person8,Service Type 1,Ac302,3240,Closed Lost,5/7/2019,85,Mailshot,3241,3,21/11/2019,21,11,FY20
+Person3,Service Type 2,Ac303,3600,Closed Lost,27/06/2019,27,iCare,16560,2,22/11/2019,22,11,FY20
+Person23,Service Type 5,Ac304,3082,Discovery,10/10/2019,14,Self gen,3452,3,22/11/2019,22,11,FY20
+Person23,Service Type 1,Ac305,900,Discovery,22/08/2019,63,Self gen,900,3,22/11/2019,22,11,FY20
+Person16,Service Type 1,Ac306,1800,Closed Lost,13/08/2019,70,Self gen,2070,3,22/11/2019,22,11,FY20
+Person2,Service Type 1,Ac307,1560,Discovery,7/9/2019,107,Self gen,1560,3,25/11/2019,25,11,FY20
+Person6,Service Type 2,Ac308,1000,Evaluation,28/05/2019,78,Self gen,9720,2,25/11/2019,25,11,FY20
+Person24,Service Type 1,Ac309,900,Discovery,13/09/2019,41,Self gen,1035,3,25/11/2019,25,11,FY20
+Person30,Service Type 2,Ac310,3960,Closed Lost,6/10/2019,113,Marketing campaigns,4554,2,25/11/2019,25,11,FY20
+Person24,Service Type 1,Ac311,1350,Decision,10/1/2019,23,Web,1553,3,27/11/2019,27,11,FY20
+Person24,Service Type 1,Ac312,1350,Discovery,25/09/2019,29,Self gen,1553,3,27/11/2019,27,11,FY20
+Person24,Service Type 1,Ac313,900,Discovery,16/09/2019,38,Web,1035,3,27/11/2019,27,11,FY20
+Person5,Service Type 2,Ac314,1800,Rejected by Sales,17/10/2019,,Event,1800,3,28/11/2019,28,11,FY20
+Person8,Service Type 2,Ac315,1217,Evaluation,31/05/2019,146,Web,1399,3,28/11/2019,28,11,FY20
+Person8,Service Type 1,Ac316,900,Discovery,10/10/2019,15,Event,1035,3,29/11/2019,29,11,FY20
+Person32,Service Type 2,Ac317,1458,Discovery,9/11/2019,43,Self gen,1593,2,29/11/2019,29,11,FY20
+Person23,Service Type 1,Ac318,1350,Discovery,14/08/2019,71,Self gen,1553,3,29/11/2019,29,11,FY20
+Person32,Service Type 2,Ac319,9720,Discovery,4/11/2019,196,Compliance opportunities,9720,3,29/11/2019,29,11,FY20
+Person8,Service Type 2,Ac320,37800,Negotiation,26/11/2018,332,Event,43470,1,29/11/2019,29,11,FY20
+Person18,Service Type 2,Ac321,312000,Evaluation,8/2/2019,83,Self gen,374400,1,29/11/2019,29,11,FY20
+Person2,Service Type 2,Ac322,4422,Evaluation,29/08/2019,56,Web,5085,2,29/11/2019,29,11,FY20
+Person32,Service Type 2,Ac323,5337,Discovery,17/10/2019,7,Self gen,5337,3,29/11/2019,29,11,FY20
+Person11,Service Type 1,Ac324,27000,Negotiation,3/12/2019,226,Self gen,27000,2,30/11/2019,30,11,FY20
+Person13,Service Type 2,Ac333,19110,Closed Lost,9/6/2019,35,Self gen,21976,2,30/11/2019,30,11,FY20
+Person13,Service Type 2,Ac326,4017,Negotiation,8/8/2019,69,Self gen,26147,2,30/11/2019,30,11,FY20
+Person16,Service Type 1,Ac327,4000,Closed Lost,19/03/2019,163,Self gen,4000,3,30/11/2019,30,11,FY20
+Person8,Service Type 1,Ac328,28500,Evaluation,4/1/2019,206,Marketing Campaign,33000,1,2/12/2020,2,12,FY20
+Person8,Service Type 1,Ac329,0,Closed Lost,11/1/2018,119,Mailshot,0,1,4/12/2019,4,12,FY20
+Person6,Service Type 2,Ac330,405,Closed Lost,4/5/2019,107,iCare,6210,2,8/12/2019,8,12,FY20
+Person8,Service Type 1,Ac331,2400,Closed Lost,22/07/2018,423,Self gen,2400,1,11/12/2019,11,12,FY20
+Person8,Service Type 8,Ac332,38880,Evaluation,15/07/2019,101,Self gen,44712,1,12/12/2019,12,12,FY20
+Person8,Service Type 2,Ac333,22386,Closed Lost,22/07/2018,409,Self gen,22386,2,12/12/2019,12,12,FY20
+Person8,Service Type 2,Ac334,25560,Discovery,31/07/2018,450,Event,28116,2,12/12/2019,12,12,FY20
+Person13,Service Type 2,Ac335,8777,Negotiation,28/08/2019,57,Web,75871,1,12/12/2019,12,12,FY20
+Person2,Service Type 1,Ac336,900,Discovery,17/09/2019,37,Web,1035,3,12/12/2019,12,12,FY20
+Person3,Service Type 3,Ac337,12000,Engaged,19/08/2019,,Web,13800,2,13/12/2019,13,12,FY20
+Person2,Service Type 2,Ac338,1200,Discovery,16/08/2019,27,Self gen,4485,3,13/12/2019,13,12,FY20
+Person2,Service Type 1,Ac339,900,Closed Lost,9/5/2019,33,Self gen,1035,3,16/12/2019,16,12,FY20
+Person8,Service Type 2,Ac340,97200,Evaluation,24/04/2019,148,Self gen,111780,1,18/12/2019,18,12,FY20
+Person8,Service Type 2,Ac341,12600,Discovery,18/07/2019,98,Web,14490,2,18/12/2019,18,12,FY20
+Person8,Service Type 2,Ac342,12600,Evaluation,20/07/2018,461,Acquired pipeline,14490,2,18/12/2019,18,12,FY20
+Person16,Service Type 1,Ac343,1350,Evaluation,10/7/2019,17,Self gen,1553,2,20/12/2019,20,12,FY20
+Person15,Service Type 5,Ac344,40000,Evaluation,18/03/2019,220,Self gen,46000,1,20/12/2019,20,12,FY20
+Person36,Service Type 5,Ac345,20000,Closed Lost,20/03/2019,211,Self gen,40000,2,20/12/2019,20,12,FY20
+Person32,Service Type 2,Ac346,1209,Discovery,9/10/2019,44,Web,1390,2,20/12/2019,20,12,FY20
+Person27,Service Type 2,Ac69,50000,Engaged,2/6/2019,,Web,50000,1,20/12/2019,20,12,FY20
+Person16,Service Type 1,Ac348,1800,Evaluation,10/11/2019,13,Self gen,2070,3,20/12/2019,20,12,FY20
+Person28,Service Type 1,Ac349,900,Rejected by Sales,25/09/2019,,Mailshot,1035,3,23/12/2019,23,12,FY20
+Person15,Service Type 1,Ac350,18360,Discovery,13/12/2018,315,Web,61118,1,23/12/2019,23,12,FY20
+Person8,Service Type 1,Ac351,7500,Evaluation,29/08/2018,421,Self gen,7500,2,23/12/2019,23,12,FY20
+Person24,Service Type 2,Ac352,1172,Decision,9/12/2019,42,Web,1348,3,25/12/2019,25,12,FY20
+Person1,Service Type 1,Ac353,1950,Decision,9/8/2019,46,Self gen,2808,2,27/12/2019,27,12,FY20
+Person5,Service Type 8,Ac354,3000,Contacted,17/10/2019,,Web,15600,2,31/12/2019,31,12,FY20
+Person14,Service Type 1,Ac355,900,Evaluation,10/11/2019,13,Web,5430,3,31/12/2019,31,12,FY20
+Person12,Service Type 2,Ac356,2805,Closed Lost,15/05/2019,19,Web,3365,3,31/12/2019,31,12,FY20
+Person13,Service Type 2,Ac357,7920,Closed Lost,19/09/2019,32,Self gen,55920,1,31/12/2019,31,12,FY20
+Person29,Service Type 5,Ac358,10000,Evaluation,22/10/2019,2,Self gen,30000,2,31/12/2020,31,12,FY20
