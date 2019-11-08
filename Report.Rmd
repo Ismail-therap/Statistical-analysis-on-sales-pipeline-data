@@ -1,6 +1,10 @@
 ---
 title: "Presenting outputs"
-output: pdf_document
+output:
+  pdf_document: default
+  word_document: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -19,6 +23,7 @@ knitr::opts_chunk$set(warning = FALSE)
 library(readr)
 library(plyr)
 library(ggplot2)
+library(ggpubr)
 
 dat <- read_csv("Data.csv")
 
@@ -233,12 +238,7 @@ plot5
 ################## Q6: #########################
 ################################################
 
-
-
-
-
 ##################### Number of deals closed by tier by opportunity owner #########################
-
 
 ## Subsetting:
 dat6 <- dat[dat$Stage == 'Closed Won',]
@@ -276,8 +276,7 @@ colnames(q1) <- c("OpportunityOwner","Tier","Freq")
 q1[q1 == 0] <- NA
 
 #nlevels(q1$OpportunityOwner)
-q1$OpportunityOwner <- factor (q1$OpportunityOwner,
-                               levels = c("Person1","Person2","Person3","Person5","Person6","Person7","Person8","Person9","Person12","Person13","Person14",
+q1$OpportunityOwner <- factor (q1$OpportunityOwner, levels = c("Person1","Person2","Person3","Person5","Person6","Person7","Person8","Person9","Person12","Person13","Person14",
                                           "Person16","Person17","Person19","Person21","Person22","Person23","Person24","Person30",
                                           "Person31","Person32","Person33","Person34","Person35","Person36"),ordered = TRUE)
 
@@ -292,30 +291,19 @@ plot6b <- plot6b + labs(title = "",
 plot6b
 
 
-
-
-
-
-
 # library("ggpubr")
 # figure6 <- ggarrange(plot6a,plot6b,ncol = 1, nrow = 2)
-# 
 # figure6 + labs(title = "Number of deals closed by tier by opportunity owner")
 
 
 ############### Total value (ABC) of deals closed by opportunity owner##################
 
 dat6 <- dat[(dat$Stage %in% c("Closed Lost","Closed Won")),]
-
-
 q6 <- aggregate(dat6$`ABC Amount`,by=list(dat6$Stage,dat6$`Opportunity Owner ID`),FUN=sum, na.rm=TRUE)
 
 colnames(q6) <- c("Stage (closed)","Opportunity Owner","Total Value(ABC)")
 # library(xtable)
 # xtable(q6)
-# 
-# 
-# 
 # q6$`Opportunity Owner` <- factor (q6$`Opportunity Owner`,levels =c("Person1","Person2","Person3","Person5","Person6","Person7","Person8","Person9","Person10","Person11","Person12","Person13","Person14","Person15",                    "Person16","Person17","Person19","Person20","Person21","Person22","Person23","Person24","Person30",                                       "Person31","Person32","Person33","Person34","Person35","Person36"),ordered = TRUE)
 
 ```
@@ -326,7 +314,7 @@ colnames(q6) <- c("Stage (closed)","Opportunity Owner","Total Value(ABC)")
 \caption{Total value (ABC) of deals closed by opportunity owner}{} 
 \begin{tabular}{rllr}
   \hline
- & Stage & OpportunityOwner & TotalValue \\ 
+ & Stage & Opportunity Owner & Total Value \\ 
   \hline
 1 & Closed Lost & Person1 & 5400 \\ 
   2 & Closed Won & Person1 & 14817 \\ 
@@ -367,7 +355,6 @@ colnames(q6) <- c("Stage (closed)","Opportunity Owner","Total Value(ABC)")
   37 & Closed Lost & Person5 & 900 \\ 
   38 & Closed Lost & Person6 & 39712 \\ 
   39 & Closed Won & Person6 & 41559 \\
-  
   40 & Closed Lost & Person7 & 12112 \\ 
   41 & Closed Won & Person7 & 1530 \\ 
   42 & Closed Lost & Person8 & 536834 \\ 
@@ -379,19 +366,187 @@ colnames(q6) <- c("Stage (closed)","Opportunity Owner","Total Value(ABC)")
 \end{table}
 
 
-##Q7: What is our sweet spot - i.e. which subsector and tier are we winning most deals? Which sub sector and tier are we losing most deals?
+## Q7: What is our sweet spot - i.e. which subsector and tier are we winning most deals? Which sub sector and tier are we losing most deals?
 
 \begin{description}
   \item[$\bullet$ Sweet spot] Subsector = Service Type 2 and Tier = 3. (Total closed won = 23).
   \item[$\bullet$ Losing spot] Subsector = Service Type 2 and Tier = 2. (Total closed lost = 32).
 \end{description}
 
+
+
+## Q8: Is there a trend where deals are taking longer to close due to order value (ABC)?
+
+
+The correlation between sales age and order value is positive and the correlation is very low (0.21). Which means, the sales age increase with order value. Although their relationship statitically significant (p-value is less than 0.05), but it's a weak relation. The trend is not obvious. 
+
 ```{r}
+ndat <- dat
+colnames(ndat)[4]<-"Amount"
+colnames(ndat)[7]<-"Age"
 
-#head(dat)
-#clw <- dat[dat$Stage == "Closed Won",]
-clw <- dat[dat$Stage == "Closed Lost",]
+ggscatter(ndat, x = "Age" , y = "Amount", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Sales age", ylab = "Order value (ABC)")
 
-#table(clw$`Sub Sector ID`,clw$`Account Tier`)
 ```
+
+
+
+## Q9: Deals won by campaign, deals lost by campaign
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlr}
+  \hline
+ & Campaign source & Number of won deals \\ 
+  \hline
+1 & Acquired pipeline &   3 \\ 
+  2 & Bizible &   2 \\ 
+  3 & Event &   6 \\ 
+  4 & iCare &   1 \\ 
+  5 & Inbound &   4 \\ 
+  6 & Mailshot &   4 \\ 
+  7 & Nurture &   1 \\ 
+  8 & Self gen &  52 \\ 
+  9 & Web &  16 \\ 
+  10 & Webinar &   4 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlr}
+  \hline
+ & Campaign source & Number of lost deals \\ 
+  \hline
+1 & Acquired pipeline &   4 \\ 
+  2 & Cross Sell &   2 \\ 
+  3 & Event &   9 \\ 
+  4 & iCare &   3 \\ 
+  5 & Inbound &   5 \\ 
+  6 & Mailshot &   9 \\ 
+  7 & Marketing campaigns &   2 \\ 
+  8 & Newsletter &   1 \\ 
+  9 & Nurture &   1 \\ 
+  10 & Self gen &  63 \\ 
+  11 & Web &  23 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlr}
+  \hline
+ & Campaign source & Average sales age \\ 
+  \hline
+1 & Acquired pipeline & 277.91 \\ 
+  2 & Bizible & 50.50 \\ 
+  3 & Compliance opportunities & 196.00 \\ 
+  4 & Cross Sell & 186.50 \\ 
+  5 & Event & 145.08 \\ 
+  6 & iCare & 84.00 \\ 
+  7 & Inbound & 81.50 \\ 
+  8 & Mailshot & 95.00 \\ 
+  9 & Marketing campaigns & 120.67 \\ 
+  10 & Newsletter & 45.00 \\ 
+  11 & Nurture & 71.50 \\ 
+  12 & Self gen & 119.05 \\ 
+  13 & Web & 72.80 \\ 
+  14 & Webinar & 13.75 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+```{r}
+# Deals won by campaign:
+clw <- dat[dat$Stage == "Closed Won",]
+wbc <- table(clw$`Campaign source`)
+
+wbc <- as.data.frame(wbc)
+colnames(wbc) <- c("Campaign source","Number of won deals")
+library(xtable)
+#xtable(wbc)
+
+
+# Deals lost by campaign:
+cll <- dat[dat$Stage == "Closed Lost",]
+lbc <- table(cll$`Campaign source`)
+
+lbc <- as.data.frame(lbc)
+colnames(lbc) <- c("Campaign source","Number of lost deals")
+library(xtable)
+#xtable(lbc)
+
+# Average sales age by campaign:
+
+q9 <- aggregate(dat$`Sales Age`,by=list(dat$`Campaign source`),FUN=mean, na.rm=TRUE)
+
+colnames(q9) <- c("Campaign source","Average sales age")
+library(xtable)
+#xtable(q9)
+
+
+
+# Number of deals by sub sector and campaign?
+
+q10 <- with(dat, ftable(dat$`Campaign source`,dat$`Sub Sector ID`))
+q10 <- as.data.frame(q10)
+colnames(q10) <- c("Campaign source","Sub Sector","Freq")
+#q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+#q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+
+q10[q10 == 0] <- NA
+
+plot10 <- ggplot(q10, aes(x = factor(q10$`Campaign source`), y = Freq, fill = `Sub Sector`)) +
+          geom_bar(position = position_stack(), stat = "identity", width = .7) +
+          geom_text(aes(label = Freq), position = position_stack(vjust = 0.5), size = 3)+
+          coord_flip()
+
+
+plot10 <- plot10 + labs(title = "Number of deals by sub sector and campaign",
+                         y="Number of deals", x = "Campaign source")
+
+plot10
+
+# which campaigns are we having the most success and is there a correlation to campaign?
+
+
+total_deal <- table(dat$`Campaign source`)
+q11 <- as.data.frame(total_deal)
+colnames(q11) <- c("Campaign source","Total deal")
+
+total_won_deal <- table(dat[dat$Stage == "Closed Won",]$`Campaign source`)
+q12 <- as.data.frame(total_won_deal)
+colnames(q12) <- c("Campaign source","Won deal")
+
+m9 <- merge(q11,q12)
+m9$winning_percentage <- (m9$`Won deal`/m9$`Total deal`)*100
+
+m9$label = paste0(sprintf("%.0f", m9$winning_percentage), "%")
+
+m9[m9 == 0] <- NA
+
+plot11 <- ggplot(m9, aes(x = factor(`Campaign source`), y = winning_percentage)) +
+          geom_bar(position = position_stack(), stat = "identity", width = .7) +
+          geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+          coord_flip()
+
+plot11 <- plot11 + labs(title = "Deals wining percentage by campaign",
+                         y="Wining %", x = "Campaign source")
+
+plot11
+
+```
+
+
 
