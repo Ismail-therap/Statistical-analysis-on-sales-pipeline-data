@@ -1,0 +1,973 @@
+---
+title: "Presenting outputs"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+```
+
+## Q1: What is the win rate by Tier and Sub sector ID. Split the above in to FY19 and FY20.
+
+Overall win rate = 0.43 !
+
+```{r}
+
+#### Reading the data:
+
+library(readr)
+library(plyr)
+library(ggplot2)
+library(ggpubr)
+
+dat <- read_csv("Data.csv")
+
+################################################
+
+
+
+# Overall
+dat11 <- dat[(dat$Stage %in% c("Closed Lost","Closed Won")),]
+tt <- table(dat11$Stage)
+
+#(tt[2]/nrow(dat11))*100
+
+#dim(dat)
+#table(dat11$`Sub Sector ID`,dat11$`Account Tier`)
+
+cw <- dat[dat$Stage == "Closed Won",]
+cl <- dat[dat$Stage == "Closed Lost",]
+
+
+cwt <- table(cw$`Sub Sector ID`,cw$`Account Tier`)
+clt <- table(cl$`Sub Sector ID`,cl$`Account Tier`)
+
+cwt <- data.frame(cwt)
+colnames(cwt) <- c("SubSector","Tier","Win")
+
+clt <- data.frame(clt)
+colnames(clt) <- c("SubSector","Tier","Lost")
+
+
+mwl <- merge(cwt,clt, by=c("SubSector","Tier"))
+mwl$Total <- mwl$Win+mwl$Lost
+mwl$WinRate <- (mwl$Win/mwl$Total)
+
+
+#View(mwl)
+
+
+
+q1 <- mwl
+
+#q1$label = paste0(sprintf("%.0f", q1$WinRate), "%")
+
+q1[q1 == 0] <- NA
+
+plot0 <- ggplot(q1) +
+          geom_bar(
+            aes(x = SubSector, y = WinRate,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = WinRate,fill =  factor(Tier),label = round(WinRate,2)
+),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot0 <- plot0 + labs(title = "Win rate by SubSector and Tier",
+                         y="Win rate", x = "Sub sector ID")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,1.1))
+
+
+
+# 
+# 
+# 
+# 
+# plot0 <- ggplot(q1, aes(x = factor(SubSector), y = WinRate, fill = Tier)) +
+#           geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#           geom_text(aes(label = WinRate), position = position_stack(vjust = 0.5), size = 3)+coord_flip()
+# 
+# 
+# plot0 <- plot0 + labs(title = "Win (%) by SubSector and Tier",
+#                          y="Win(%)", x = "Sub sector ID")
+
+################################################
+################## Q1: #########################
+################################################
+
+
+
+
+
+# dat0 <- dat[dat$Stage == 'Closed Won',]
+# 
+# 
+# q1 <- with(dat0, ftable(dat0$`Sub Sector ID`,dat0$`Account Tier`))
+# q1 <- as.data.frame(q1)
+# colnames(q1) <- c("SubSector","Tier","Freq")
+# q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+# q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+# 
+# q1[q1 == 0] <- NA
+# 
+# 
+# plot0 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier)) +
+#           geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#           geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+#           coord_flip()
+# 
+# 
+# plot0 <- plot0 + labs(title = "Win (%) by SubSector and Tier",
+#                          y="Win(%)", x = "Sub sector ID")
+# 
+
+
+
+
+## Subsetting:
+#dat1 <- dat[dat$Stage == 'Closed Won' & dat$FY == "FY19",]
+
+
+
+cw <- dat[dat$Stage == "Closed Won" & dat$FY == "FY19",]
+cl <- dat[dat$Stage == "Closed Lost" & dat$FY == "FY19",]
+
+
+cwt <- table(cw$`Sub Sector ID`,cw$`Account Tier`)
+clt <- table(cl$`Sub Sector ID`,cl$`Account Tier`)
+
+cwt <- data.frame(cwt)
+colnames(cwt) <- c("SubSector","Tier","Win")
+
+clt <- data.frame(clt)
+colnames(clt) <- c("SubSector","Tier","Lost")
+
+
+mwl <- merge(cwt,clt, by=c("SubSector","Tier"))
+mwl$Total <- mwl$Win+mwl$Lost
+mwl$WinRate <- (mwl$Win/mwl$Total)
+
+
+#View(mwl)
+
+
+
+q1 <- mwl
+
+#q1$label = paste0(sprintf("%.0f", q1$WinRate), "%")
+
+q1[q1 == 0] <- NA
+
+plot1 <- ggplot(q1) +
+          geom_bar(
+            aes(x = SubSector, y = WinRate,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = WinRate,fill =  factor(Tier),label = round(WinRate,2)
+),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot1 <- plot1 + labs(title = "Win rate by SubSector and Tier (FY19)",
+                         y="Win rate", x = "Sub sector ID")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,1.1))
+
+
+# q1 <- with(dat1, ftable(dat1$`Sub Sector ID`,dat1$`Account Tier`))
+# q1 <- as.data.frame(q1)
+# colnames(q1) <- c("SubSector","Tier","Freq")
+# q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+# q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+# 
+# q1[q1 == 0] <- NA
+# 
+# 
+# plot1 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier)) +
+#           geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#           geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+#           coord_flip()
+# 
+# 
+# plot1 <- plot1 + labs(title = "Win (%) by SubSector and Tier (FY19)",
+#                          y="Win(%)", x = "Sub sector ID")
+
+##########################################################################
+#dat1 <- dat[dat$Stage == 'Closed Won' & dat$FY == "FY20",]
+
+
+
+
+cw <- dat[dat$Stage == "Closed Won" & dat$FY == "FY20",]
+cl <- dat[dat$Stage == "Closed Lost" & dat$FY == "FY20",]
+
+
+cwt <- table(cw$`Sub Sector ID`,cw$`Account Tier`)
+clt <- table(cl$`Sub Sector ID`,cl$`Account Tier`)
+
+cwt <- data.frame(cwt)
+colnames(cwt) <- c("SubSector","Tier","Win")
+
+clt <- data.frame(clt)
+colnames(clt) <- c("SubSector","Tier","Lost")
+
+
+mwl <- merge(cwt,clt, by=c("SubSector","Tier"))
+mwl$Total <- mwl$Win+mwl$Lost
+mwl$WinRate <- (mwl$Win/mwl$Total)
+
+
+#View(mwl)
+
+
+
+q1 <- mwl
+
+#q1$label = paste0(sprintf("%.0f", q1$WinRate), "%")
+
+q1[q1 == 0] <- NA
+
+plot2 <- ggplot(q1) +
+          geom_bar(
+            aes(x = SubSector, y = WinRate,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = WinRate,fill =  factor(Tier),label = round(WinRate,2)
+),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot2 <- plot2 + labs(title = "Win rate by SubSector and Tier (FY20)",
+                         y="Win rate", x = "Sub sector ID")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,1.1))
+
+
+# q1 <- with(dat1, ftable(dat1$`Sub Sector ID`,dat1$`Account Tier`))
+# q1 <- as.data.frame(q1)
+# colnames(q1) <- c("SubSector","Tier","Freq")
+# q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+# q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+# 
+# q1[q1 == 0] <- NA
+# 
+# 
+# plot2 <- ggplot(q1, aes(x = factor(SubSector), y = win_percentage, fill = Tier)) +
+#   geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#   geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+#   coord_flip()
+# 
+# 
+# plot2 <- plot2 + labs(title = "Win (%) by SubSector and Tier (FY20)",
+#              y="Win(%)", x = "Sub sector ID")
+# 
+
+plot0
+
+library("ggpubr")
+figure <- ggarrange(plot1,plot2,ncol = 1, nrow = 2)
+figure
+
+```
+
+##Q2:  How many opportunities are open (i.e. not closed lost or closed won) by stage and tier. (e.g. we have x number of opportunities open at stage y for Tier 1)
+
+
+```{r}
+#How many opportunities are open (i.e. not closed lost or closed won) by stage and tier..
+#e.g. we have x number of opportunities open at stage y for Tier 1
+
+
+
+dat2 <- droplevels(dat[!dat$Stage == "Closed Lost",])
+dat2 <- droplevels(dat2[!dat2$Stage == "Closed Won",])
+
+
+
+
+q2 <- with(dat2, ftable(dat2$Stage,dat2$`Account Tier`))
+q2 <- as.data.frame(q2)
+colnames(q2) <- c("Stage","Tier","Freq")
+q2[q2 == 0] <- NA
+#q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+#q2$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+
+
+q2$Stage <- factor(q2$Stage,
+                        levels = c("Contacted","Engaged","Rejected by Sales","Ready for Sales","Discovery","Evaluation","Negotiation","Decision"),ordered = TRUE)
+
+
+
+
+plot3 <- ggplot(q2, aes(x = factor(Stage), y = Freq, fill = Tier)) +
+  geom_bar(position = position_stack(), stat = "identity", width = .7) +
+  geom_text(aes(label = Freq), position = position_stack(vjust = 0.5), size = 3.5)+
+  coord_flip()
+
+plot3 <- plot3 + labs(title = "Open opportunities by stage and tier",
+                      y="Frequency", x = "Stage")
+plot3
+
+```
+
+##Q3: What is the average order value (ABC) by Tier and Sub sector.
+
+```{r}
+################################################
+################## Q3: #########################
+################################################
+
+# What is the average order value (ABC) by Tier and Sub sector
+
+
+q3 <- aggregate(dat$`ABC Amount`,by=list(dat$`Sub Sector ID`),FUN=mean,na.rm=TRUE)
+colnames(q3) <- c("SubSector","AverageOrder")
+plot4 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = AverageOrder),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = AverageOrder,label = paste0("£",format(round(AverageOrder,0),big.mark=",",scientific=FALSE)
+)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot4 <- plot4 + labs(title = "Average order value (ABC) by Sub sector",
+                      y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$AverageOrder+0.10*max(q3$AverageOrder))))
+plot4
+
+
+
+
+q3 <- aggregate(dat$`ABC Amount`,by=list(dat$`Account Tier`,dat$`Sub Sector ID`),FUN=mean,na.rm=TRUE)
+colnames(q3) <- c("Tier","SubSector","AverageOrder")
+q3$Tier <- as.factor(q3$Tier)
+
+
+
+
+
+# plot4 <- ggplot(q3, aes(x = factor(SubSector), y = AverageOrder, fill = Tier)) +
+#   geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#   geom_text(aes(label = round(AverageOrder,1)), position = position_stack(vjust = 0.5), size = 3.5)+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+plot4 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = AverageOrder,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = AverageOrder,fill =  factor(Tier),label = paste0("£",format(round(AverageOrder,0),big.mark=",",scientific=FALSE)
+)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot4 <- plot4 + labs(title = "Average order value (ABC) by Tier Sub sector",
+                      y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$AverageOrder+0.10*max(q3$AverageOrder))))
+plot4
+
+
+```
+
+##Q4: What is average sales age by tier and sub sector.
+
+```{r}
+################################################
+################## Q4: #########################
+################################################
+
+
+#What is average sales age by tier and sub sector
+
+
+
+q3 <- aggregate(dat$`Sales Age`,by=list(dat$`Sub Sector ID`),FUN=mean, na.rm=TRUE)
+
+colnames(q3) <- c("SubSector","SalesAge")
+plot4 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = SalesAge),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = SalesAge,label = round(SalesAge,0)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot4 <- plot4 + labs(title = "Average sales age by Sub sector",
+                      y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$SalesAge+0.10*max(q3$SalesAge))))
+plot4
+
+q3 <- aggregate(dat$`Sales Age`,by=list(dat$`Account Tier`,dat$`Sub Sector ID`),FUN=mean, na.rm=TRUE)
+colnames(q3) <- c("Tier","SubSector","SalesAge")
+q3$Tier <- as.factor(q3$Tier)
+# plot5 <- ggplot(q3, aes(x = factor(SubSector), y = SalesAge, fill = Tier)) +
+#   geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#   geom_text(aes(label = round(SalesAge,1)), position = position_stack(vjust = 0.5), size = 3.5)+
+#   coord_flip()
+
+
+plot5 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = SalesAge,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = SalesAge,fill =  factor(Tier),label = round(SalesAge,0)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot5 <- plot5 + labs(title = "Average sales age by Tier and Sub sector",
+                      y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$SalesAge+0.10*max(q3$SalesAge))))
+plot5
+
+```
+
+
+##Q5: For deals that have closed won what is the average sales age by tier and subsector.
+
+
+```{r}
+
+################################################
+################## Q5: #########################
+################################################
+
+dat5 <- dat[dat$Stage == "Closed Won",]
+q3 <- aggregate(dat5$`Sales Age`,by=list(dat5$`Sub Sector ID`),FUN=mean, na.rm=TRUE)
+colnames(q3) <- c("SubSector","SalesAge")
+
+plot5 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = SalesAge),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = SalesAge,label = round(SalesAge,0)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+plot5 <- plot5 + labs(title = "Average sales age by Sub sector (Closed won)",y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$SalesAge+0.10*max(q3$SalesAge))))
+plot5
+
+
+
+# For deals that have closed won what is the average sales age by tier and subsector
+
+dat5 <- dat[dat$Stage == "Closed Won",]
+q3 <- aggregate(dat5$`Sales Age`,by=list(dat5$`Account Tier`,dat5$`Sub Sector ID`),FUN=mean, na.rm=TRUE)
+colnames(q3) <- c("Tier","SubSector","SalesAge")
+q3$Tier <- as.factor(q3$Tier)
+
+
+
+plot5 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = SalesAge,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = SalesAge,fill =  factor(Tier),label = round(SalesAge,0)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot5 <- plot5 + labs(title = "Average sales age by Tier and Sub sector (Closed won)",y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$SalesAge+0.10*max(q3$SalesAge))))
+plot5
+
+# plot5 <- ggplot(q3, aes(x = factor(SubSector), y = SalesAge, fill = Tier)) +
+#   geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#   geom_text(aes(label = round(SalesAge,1)), position = position_stack(vjust = 0.5), size = 3.5)
+# 
+# plot5 <- plot5 + labs(title = "Average sales age by Tier and Sub sector (Closed won)",
+#                       y="Average", x = "Sub sector")
+# plot5
+
+
+
+
+
+
+
+
+
+# For deals that have closed lost what is the average sales age by tier and subsector
+
+dat6 <- dat[dat$Stage == "Closed Lost",]
+q3 <- aggregate(dat6$`Sales Age`,by=list(dat6$`Sub Sector ID`),FUN=mean, na.rm=TRUE)
+colnames(q3) <- c("SubSector","SalesAge")
+
+plot5 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = SalesAge),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = SalesAge,label = round(SalesAge,0)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot5 <- plot5 + labs(title = "Average sales age by Sub sector (Closed lost)",y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$SalesAge+0.10*max(q3$SalesAge))))
+plot5
+
+
+
+
+####
+dat6 <- dat[dat$Stage == "Closed Lost",]
+q3 <- aggregate(dat6$`Sales Age`,by=list(dat6$`Account Tier`,dat6$`Sub Sector ID`),FUN=mean, na.rm=TRUE)
+colnames(q3) <- c("Tier","SubSector","SalesAge")
+q3$Tier <- as.factor(q3$Tier)
+
+plot5 <- ggplot(q3) +
+          geom_bar(
+            aes(x = SubSector, y = SalesAge,fill = Tier),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = SubSector, y = SalesAge,fill =  factor(Tier),label = round(SalesAge,0)),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot5 <- plot5 + labs(title = "Average sales age by Tier and Sub sector (Closed lost)",y="Average", x = "Sub sector")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,max(q3$SalesAge+0.10*max(q3$SalesAge))))
+plot5
+
+
+
+
+
+# plot5 <- ggplot(q3, aes(x = factor(SubSector), y = SalesAge, fill = Tier)) +
+#   geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#   geom_text(aes(label = round(SalesAge,1)), position = position_stack(vjust = 0.5), size = 3.5)
+# 
+# plot5 <- plot5 + labs(title = "Average sales age by Tier and Sub sector (Closed lost)",
+#                       y="Average", x = "Sub sector")
+# plot5
+```
+
+
+##Q6: Number of deals closed by tier by opportunity owner.
+
+```{r}
+
+################################################
+################## Q6: #########################
+################################################
+
+##################### Number of deals closed by tier by opportunity owner #########################
+
+## Subsetting:
+dat6 <- dat[dat$Stage == 'Closed Won',]
+
+
+q1 <- with(dat6, ftable(dat6$`Opportunity Owner ID`,dat6$`Account Tier`))
+q1 <- as.data.frame(q1)
+colnames(q1) <- c("OpportunityOwner","Tier","Freq")
+q1[q1 == 0] <- NA
+
+q1$OpportunityOwner <- factor (q1$OpportunityOwner,
+                        levels = c("Person1","Person2","Person6","Person7","Person8","Person9","Person10","Person11","Person13","Person14","Person15","Person16","Person17",
+                                   "Person18","Person19","Person20", "Person21", "Person23", "Person24", "Person33"),ordered = TRUE)
+
+
+plot6a <- ggplot(q1, aes(x = factor(OpportunityOwner), y = Freq, fill = Tier)) +
+  geom_bar(position = position_stack(), stat = "identity", width = .7) +
+  geom_text(aes(label = Freq), position = position_stack(vjust = 0.5), size = 3)+
+  coord_flip()
+
+plot6a <- plot6a + labs(title = "",
+                      y="Number of deals closed won", x = "Opportunity owner")
+plot6a
+
+
+
+#########
+
+dat6 <- dat[dat$Stage == "Closed Lost",]
+
+
+q1 <- with(dat6, ftable(dat6$`Opportunity Owner ID`,dat6$`Account Tier`))
+q1 <- as.data.frame(q1)
+colnames(q1) <- c("OpportunityOwner","Tier","Freq")
+q1[q1 == 0] <- NA
+
+#nlevels(q1$OpportunityOwner)
+q1$OpportunityOwner <- factor (q1$OpportunityOwner, levels = c("Person1","Person2","Person3","Person5","Person6","Person7","Person8","Person9","Person12","Person13","Person14",
+                                          "Person16","Person17","Person19","Person21","Person22","Person23","Person24","Person30",
+                                          "Person31","Person32","Person33","Person34","Person35","Person36"),ordered = TRUE)
+
+
+plot6b <- ggplot(q1, aes(x = factor(OpportunityOwner), y = Freq, fill = Tier)) +
+  geom_bar(position = position_stack(), stat = "identity", width = .7) +
+  geom_text(aes(label = Freq), position = position_stack(vjust = 0.5), size = 3)+
+  coord_flip()
+
+plot6b <- plot6b + labs(title = "",
+                        y="Number of deals closed lost", x = "Opportunity owner")
+plot6b
+
+
+# library("ggpubr")
+# figure6 <- ggarrange(plot6a,plot6b,ncol = 1, nrow = 2)
+# figure6 + labs(title = "Number of deals closed by tier by opportunity owner")
+
+
+############### Total value (ABC) of deals closed by opportunity owner##################
+
+dat6 <- dat[(dat$Stage %in% c("Closed Lost","Closed Won")),]
+q6 <- aggregate(dat6$`ABC Amount`,by=list(dat6$Stage,dat6$`Opportunity Owner ID`),FUN=sum, na.rm=TRUE)
+
+colnames(q6) <- c("Stage (closed)","Opportunity Owner","Total Value(ABC)")
+# library(xtable)
+# xtable(q6)
+# q6$`Opportunity Owner` <- factor (q6$`Opportunity Owner`,levels =c("Person1","Person2","Person3","Person5","Person6","Person7","Person8","Person9","Person10","Person11","Person12","Person13","Person14","Person15",                    "Person16","Person17","Person19","Person20","Person21","Person22","Person23","Person24","Person30",                                       "Person31","Person32","Person33","Person34","Person35","Person36"),ordered = TRUE)
+
+```
+
+
+\begin{table}[ht]
+\centering
+\caption{Total value (ABC) of deals closed by opportunity owner}{} 
+\begin{tabular}{rllr}
+  \hline
+ & Stage & Opportunity Owner & Total Value \\ 
+  \hline
+1 & Closed Lost & Person1 & 5400 \\ 
+  2 & Closed Won & Person1 & 14817 \\ 
+  3 & Closed Won & Person10 & 2760 \\ 
+  4 & Closed Won & Person11 & 12600 \\ 
+  5 & Closed Lost & Person12 & 9945 \\ 
+  6 & Closed Lost & Person13 & 41630 \\ 
+  7 & Closed Won & Person13 & 22861 \\ 
+  8 & Closed Lost & Person14 & 3840 \\ 
+  9 & Closed Won & Person14 & 3600 \\ 
+  10 & Closed Won & Person15 & 63606 \\ 
+  11 & Closed Lost & Person16 & 13840 \\ 
+  12 & Closed Won & Person16 & 2640 \\ 
+  13 & Closed Lost & Person17 & 16548 \\ 
+  14 & Closed Won & Person17 &   0 \\ 
+  15 & Closed Won & Person18 & 36150 \\ 
+  16 & Closed Lost & Person19 & 2220 \\ 
+  17 & Closed Won & Person19 & 2220 \\ 
+  18 & Closed Lost & Person2 & 1800 \\ 
+  19 & Closed Won & Person2 & 5820 \\ 
+  20 & Closed Won & Person20 & 1140 \\ 
+  21 & Closed Lost & Person21 &   0 \\ 
+  22 & Closed Won & Person21 & 4200 \\ 
+  23 & Closed Lost & Person22 & 2160 \\ 
+  24 & Closed Lost & Person23 & 3600 \\ 
+  25 & Closed Won & Person23 & 1080 \\ 
+  26 & Closed Lost & Person24 & 1839 \\ 
+  27 & Closed Won & Person24 & 6165 \\ 
+  28 & Closed Lost & Person3 & 15600 \\ 
+  29 & Closed Lost & Person30 & 38430 \\ 
+  30 & Closed Lost & Person31 & 1518 \\ 
+  31 & Closed Lost & Person32 & 2520 \\ 
+  32 & Closed Lost & Person33 & 3600 \\ 
+  33 & Closed Won & Person33 & 4050 \\ 
+  34 & Closed Lost & Person34 & 10000 \\ 
+  35 & Closed Lost & Person35 & 3000 \\ 
+  36 & Closed Lost & Person36 & 20000 \\ 
+  37 & Closed Lost & Person5 & 900 \\ 
+  38 & Closed Lost & Person6 & 39712 \\ 
+  39 & Closed Won & Person6 & 41559 \\
+  40 & Closed Lost & Person7 & 12112 \\ 
+  41 & Closed Won & Person7 & 1530 \\ 
+  42 & Closed Lost & Person8 & 536834 \\ 
+  43 & Closed Won & Person8 & 206583 \\ 
+  44 & Closed Lost & Person9 & 1000 \\ 
+  45 & Closed Won & Person9 & 8100 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+## Q7: What is our sweet spot - i.e. which subsector and tier are we winning most deals? Which sub sector and tier are we losing most deals?
+
+\begin{description}
+  \item[$\bullet$ Sweet spot] Subsector = Service Type 2 and Tier = 3. (Total closed won = 23).
+  \item[$\bullet$ Losing spot] Subsector = Service Type 2 and Tier = 2. (Total closed lost = 32).
+\end{description}
+
+
+
+## Q8: Is there a trend where deals are taking longer to close due to order value (ABC)?
+
+
+The correlation between sales age and order value is positive and the correlation is very low (0.21). Which means, the sales age increase with order value. Although their relationship statitically significant (p-value is less than 0.05), but it's a weak relation. The trend is not obvious. 
+
+```{r}
+ndat <- dat
+colnames(ndat)[4]<-"Amount"
+colnames(ndat)[7]<-"Age"
+
+ggscatter(ndat, x = "Age" , y = "Amount",add = "reg.line", conf.int = TRUE,
+          xlab = "Sales age", ylab = "Order value (ABC)")
+
+#cor(ndat$Age,ndat$Amount,use="complete.obs")
+# ggscatter(ndat, x = "Age" , y = "Amount", 
+#           add = "reg.line", conf.int = TRUE, 
+#           cor.coef = TRUE, cor.method = "pearson",
+#           xlab = "Sales age", ylab = "Order value (ABC)")
+
+```
+
+
+
+## Q9: Deals won by campaign, deals lost by campaign
+
+
+\begin{table}[ht]
+\centering
+\caption{Deals won by campaign}{} 
+\begin{tabular}{rlr}
+  \hline
+ & Campaign source & Number of won deals \\ 
+  \hline
+1 & Acquired pipeline &   3 \\ 
+  2 & Bizible &   2 \\ 
+  3 & Event &   6 \\ 
+  4 & iCare &   1 \\ 
+  5 & Inbound &   4 \\ 
+  6 & Mailshot &   4 \\ 
+  7 & Nurture &   1 \\ 
+  8 & Self gen &  52 \\ 
+  9 & Web &  16 \\ 
+  10 & Webinar &   4 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Deals lost by campaign}{} 
+\begin{tabular}{rlr}
+  \hline
+ & Campaign source & Number of lost deals \\ 
+  \hline
+1 & Acquired pipeline &   4 \\ 
+  2 & Cross Sell &   2 \\ 
+  3 & Event &   9 \\ 
+  4 & iCare &   3 \\ 
+  5 & Inbound &   5 \\ 
+  6 & Mailshot &   9 \\ 
+  7 & Marketing campaigns &   2 \\ 
+  8 & Newsletter &   1 \\ 
+  9 & Nurture &   1 \\ 
+  10 & Self gen &  63 \\ 
+  11 & Web &  23 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\caption{Average sales age by campaign}{} 
+\begin{tabular}{rlr}
+  \hline
+ & Campaign source & Average sales age \\ 
+  \hline
+1 & Acquired pipeline & 277.91 \\ 
+  2 & Bizible & 50.50 \\ 
+  3 & Compliance opportunities & 196.00 \\ 
+  4 & Cross Sell & 186.50 \\ 
+  5 & Event & 145.08 \\ 
+  6 & iCare & 84.00 \\ 
+  7 & Inbound & 81.50 \\ 
+  8 & Mailshot & 95.00 \\ 
+  9 & Marketing campaigns & 120.67 \\ 
+  10 & Newsletter & 45.00 \\ 
+  11 & Nurture & 71.50 \\ 
+  12 & Self gen & 119.05 \\ 
+  13 & Web & 72.80 \\ 
+  14 & Webinar & 13.75 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+```{r}
+# Deals won by campaign:
+clw <- dat[dat$Stage == "Closed Won",]
+wbc <- table(clw$`Campaign source`)
+
+wbc <- as.data.frame(wbc)
+colnames(wbc) <- c("Campaign source","Number of won deals")
+library(xtable)
+#xtable(wbc)
+
+
+# Deals lost by campaign:
+cll <- dat[dat$Stage == "Closed Lost",]
+lbc <- table(cll$`Campaign source`)
+
+lbc <- as.data.frame(lbc)
+colnames(lbc) <- c("Campaign source","Number of lost deals")
+library(xtable)
+#xtable(lbc)
+
+# Average sales age by campaign:
+
+q9 <- aggregate(dat$`Sales Age`,by=list(dat$`Campaign source`),FUN=mean, na.rm=TRUE)
+
+colnames(q9) <- c("Campaign source","Average sales age")
+library(xtable)
+#xtable(q9)
+
+
+
+# Number of deals by sub sector and campaign?
+
+q10 <- with(dat, ftable(dat$`Campaign source`,dat$`Sub Sector ID`))
+q10 <- as.data.frame(q10)
+colnames(q10) <- c("Campaign source","Sub Sector","Freq")
+#q1$win_percentage <- round((q1$Freq/sum(q1$Freq)*100),1)
+#q1$label = paste0(sprintf("%.0f", q1$win_percentage), "%")
+
+q10[q10 == 0] <- NA
+
+plot10 <- ggplot(q10, aes(x = factor(q10$`Campaign source`), y = Freq, fill = `Sub Sector`)) +
+          geom_bar(position = position_stack(), stat = "identity", width = .7) +
+          geom_text(aes(label = Freq), position = position_stack(vjust = 0.5), size = 3)+
+          coord_flip()
+
+
+plot10 <- plot10 + labs(title = "Number of deals by sub sector and campaign",
+                         y="Number of deals", x = "Campaign source")
+
+plot10
+
+# which campaigns are we having the most success and is there a correlation to campaign?
+
+cw <- dat[dat$Stage == "Closed Won",]
+cl <- dat[dat$Stage == "Closed Lost",]
+
+
+cwt <- table(cw$`Campaign source`)
+clt <- table(cl$`Campaign source`)
+
+cwt <- data.frame(cwt)
+colnames(cwt) <- c("CampaignSource","Win")
+
+clt <- data.frame(clt)
+colnames(clt) <- c("CampaignSource","Lost")
+
+
+mwl <- merge(cwt,clt, by=c("CampaignSource"))
+mwl$Total <- mwl$Win+mwl$Lost
+mwl$WinRate <- (mwl$Win/mwl$Total)
+
+
+
+
+
+q1 <- mwl
+
+#q1$label = paste0(sprintf("%.0f", q1$WinRate), "%")
+
+q1[q1 == 0] <- NA
+
+plot11 <- ggplot(q1) +
+          geom_bar(
+            aes(x = CampaignSource, y = WinRate),
+            stat='identity', position = 'dodge') +
+            geom_text(
+              aes(x = CampaignSource, y = WinRate,label = round(WinRate,2)
+),
+              vjust = -0.5, size = 3.5,
+              position = position_dodge(width = 1),
+              inherit.aes = TRUE
+            )
+
+
+plot11 <- plot11 + labs(title = "Win rate by Campaign Source",
+                         y="Win rate", x = "Campaign Source")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  coord_cartesian(ylim = c(0,1))
+
+
+plot11
+
+# total_deal <- table(dat$`Campaign source`)
+# q11 <- as.data.frame(total_deal)
+# colnames(q11) <- c("Campaign source","Total deal")
+# 
+# total_won_deal <- table(dat[dat$Stage == "Closed Won",]$`Campaign source`)
+# q12 <- as.data.frame(total_won_deal)
+# colnames(q12) <- c("Campaign source","Won deal")
+# 
+# 
+# 
+# View(q12)
+# m9$winning_percentage <- (m9$`Won deal`/m9$`Total deal`)*100
+# 
+# m9$label = paste0(sprintf("%.0f", m9$winning_percentage), "%")
+# 
+# m9[m9 == 0] <- NA
+# 
+# plot11 <- ggplot(m9, aes(x = factor(`Campaign source`), y = winning_percentage)) +
+#           geom_bar(position = position_stack(), stat = "identity", width = .7) +
+#           geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3)+
+#           coord_flip()
+# 
+# plot11 <- plot11 + labs(title = "Deals wining percentage by campaign",
+#                          y="Wining %", x = "Campaign source")
+# 
+# plot11
+
+```
+
+
